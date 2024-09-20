@@ -17,7 +17,7 @@ export function todoReducer(state, action) {
       return [
         ...state,
         {
-          id: state.length + 1,
+          id: Date.now(),
           title: action.payload,
           status: false,
         },
