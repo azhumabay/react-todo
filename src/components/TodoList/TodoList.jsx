@@ -4,11 +4,11 @@ import { TodoContext } from "../../context/TodoProvider";
 import TodoItem from "./TodoItem";
 
 export default function TodoList() {
-  const { state } = useContext(TodoContext);
+  const { todoList } = useContext(TodoContext);
 
   return (
     <List>
-      {state.map((todo) => (
+      {todoList.map((todo) => (
         <TodoItem key={todo.id} {...todo} />
       ))}
     </List>

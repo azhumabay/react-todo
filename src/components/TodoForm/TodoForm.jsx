@@ -11,12 +11,12 @@ import {
 import { Add as AddIcon } from "@mui/icons-material";
 
 export default function TodoForm() {
-  const { dispatch } = useContext(TodoContext);
+  const { todoDispatch } = useContext(TodoContext);
   const [inputTitle, setInputTitle] = useState("");
 
   const addTask = () => {
     if (inputTitle.trim()) {
-      dispatch({ type: "addTask", payload: inputTitle });
+      todoDispatch({ type: "addTask", payload: inputTitle });
       setInputTitle("");
     }
   };

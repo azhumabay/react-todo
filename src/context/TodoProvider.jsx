@@ -9,14 +9,14 @@ const init = () => {
 };
 
 export const TodoProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(todoReducer, [], init);
+  const [todoList, todoDispatch] = useReducer(todoReducer, [], init);
 
   useEffect(() => {
-    localStorage.setItem("todoList", JSON.stringify(state));
-  }, [state]);
+    localStorage.setItem("todoList", JSON.stringify(todoList));
+  }, [todoList]);
 
   return (
-    <TodoContext.Provider value={{ state, dispatch }}>
+    <TodoContext.Provider value={{ todoList, todoDispatch }}>
       {children}
     </TodoContext.Provider>
   );

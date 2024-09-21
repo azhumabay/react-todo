@@ -4,14 +4,14 @@ import { ListItem, ListItemText, IconButton, Typography } from "@mui/material";
 import { Check, Close, Delete } from "@mui/icons-material";
 
 export default function TodoItem({ id, title, status }) {
-  const { dispatch } = useContext(TodoContext);
+  const { todoDispatch } = useContext(TodoContext);
 
   const toggleStatus = () => {
-    dispatch({ type: "changeStatus", payload: id });
+    todoDispatch({ type: "changeStatus", payload: id });
   };
 
   const deleteTask = () => {
-    dispatch({ type: "delete", payload: id });
+    todoDispatch({ type: "delete", payload: id });
   };
 
   return (
