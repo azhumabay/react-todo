@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { TodoContext } from "../../context/TodoProvider";
+import { TodoContext } from "../context/TodoProvider";
 import {
   Button,
   Box,
